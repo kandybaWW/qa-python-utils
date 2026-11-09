@@ -1,0 +1,17 @@
+import sys
+
+def check_status_code(code):
+    """Simple status code verifier for QA testing"""
+    if code == 200:
+        return "PASS: OK"
+    elif code == 404:
+        return "FAIL: Not Found"
+    elif code == 500:
+        return "FAIL: Server Error"
+    else:
+        return f"INFO: Status {code}"
+
+if __name__ == "__main__":
+    print("Running QA Test Verification...")
+    test_code = 200
+    print(f"Testing response {test_code}: {check_status_code(test_code)}")
